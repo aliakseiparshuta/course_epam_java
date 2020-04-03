@@ -11,13 +11,12 @@ public class MainTask5 {
                 "July", "August", "September", "October", "November", "December"};
 
         Scanner scanner = new Scanner(System.in);
-        int i = scanner.nextInt();
-        while (i.)
 
         try {
-
+            System.out.println("Insert the number");
+            int i = scanner.nextInt();
             System.out.println(months[i-1]);
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (Exception e) {
             System.out.println("No such month");
         }
 
