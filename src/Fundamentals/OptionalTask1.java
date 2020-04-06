@@ -25,16 +25,42 @@ public class OptionalTask1 {
         System.out.println("Самое длинное число : " + max1 + " его длина : " + max);
     }
 
+    public static String[] toString(int[] numbers) {
+        // Преобразуем массив чисел в массив строк
+        String[] strNum = new String[numbers.length];
+        for (int i = 0; i < numbers.length; i++){
+            strNum[i] = Integer.toString(numbers[i]);
+        }
+        return strNum;
+    }
+
+    public static String[] increment(String[] numbers) {
+//        2.     Вывести числа в порядке возрастания (убывания) значений их длины.
+        for (int i = 0; i < numbers.length; i++){
+            for (int y = 0; y < numbers.length-1; y++){
+                if(numbers[y].length()<numbers[y+1].length()){
+                    String asd = numbers[y];
+                    numbers[y] = numbers[y+1];
+                    numbers[y+1] = asd;
+                }
+            }
+        }
+        return numbers;
+    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите нужное количество цифр");
-        int n = sc.nextInt();
+        int n = scanner.nextInt();
         int[] numbers = new int[n];
         System.out.println("Заполните массив");
         for (int i = 0; i<numbers.length; i++){
-            numbers[i] = Math.abs(sc.nextInt());
+            numbers[i] = Math.abs(scanner.nextInt());
         }
         shortLong(numbers);
+        for (String asd : increment(toString(numbers))){
+            System.out.println(asd);
+        }
 
     }
 }
